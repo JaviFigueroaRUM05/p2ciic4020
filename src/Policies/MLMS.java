@@ -1,5 +1,5 @@
 package Policies;
 
-public class MLMS {
+public class MLMS extends Policy	{
 
 }

@@ -1,5 +1,5 @@
 package Policies;
 
-public class MLMSBLL {
+public class MLMSBLL extends Policy {
 
 }
