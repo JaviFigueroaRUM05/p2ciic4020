@@ -22,10 +22,10 @@ public class Main {
 	
 	public static void main(String[] args) throws IOException {
 		fileReader();
-//		Policy smls;
-//		Policy mlms;
-//		Policy mlmsbll;
-//		Policy mlmsbwt;
+		Policy smls;
+		Policy mlms;
+		Policy mlmsbll;
+		Policy mlmsbwt;
 		System.out.println(dataFiles);
 
 		for(String file : dataFiles) {
@@ -33,19 +33,19 @@ public class Main {
 			dataReader(file);
 			sort(customers);
 			System.out.println(customers);
-//			for(int i = 0; i < 3; i++) {
-//				smls = new SLMS(2*i +1, customers);
-//			}
-//			for(int i = 0; i < 3; i++) {
-//				smls = new MLMS(2*i +1, customers);
-//			}
-//			for(int i = 0; i < 3; i++) {
-//				smls = new MLMSBLL(2*i +1, customers);
-//			}
-//			for(int i = 0; i < 3; i++) {
-//				smls = new MLMSBWT(2*i +1, customers);
-//			}
-//			customers.clear();
+			for(int i = 0; i < 3; i++) {
+				smls = new SLMS(2*i +1, customers);
+			}
+			for(int i = 0; i < 3; i++) {
+				smls = new MLMS(2*i +1, customers);
+			}
+			for(int i = 0; i < 3; i++) {
+				smls = new MLMSBLL(2*i +1, customers);
+			}
+			for(int i = 0; i < 3; i++) {
+				smls = new MLMSBWT(2*i +1, customers);
+			}
+			customers.clear();
 		}
 		
 	}
@@ -70,7 +70,7 @@ public class Main {
 		String data;
 		while((data = in.readLine()) != null) {
 			if(!Pattern.matches("[0-9]+ [0-9]+", data)) {
-				PrintWriter out = new PrintWriter("outputFiles/data_OUT.txt", "UTF-8");
+				PrintWriter out = new PrintWriter("outputFiles/" + file.substring(0, file.length()-4) + "_OUT.txt", "UTF-8");
 				out.println("Input file does not meet the expected format or it is empty.");
 				out.close();
 				customers.clear();
@@ -84,6 +84,7 @@ public class Main {
 				customers.add(customer);
 			}
 		}
+		in.close();
 	}
 	
 	public static void sort(ArrayList<ArrayList<Integer>> arr) {

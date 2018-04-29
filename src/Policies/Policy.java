@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import Components.Line;
 import Components.Server;
 
-public class Policy {
+public abstract class Policy {
 	protected Server[] servers;
 	protected Line[] lines;
 	protected ArrayList<ArrayList<Integer>> customers;
@@ -16,5 +16,7 @@ public class Policy {
 		this.lines = new Line[linesAmount];
 		this.customers = customers;
 	}
+	
+	public abstract void runSimulation();
 	
 }
